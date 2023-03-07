@@ -42,50 +42,49 @@ class Task {
 
   Clear() {
     clearSelected.addEventListener('click', () => {
-      const newdata = this.getStoredData().filter((data) => !data.completed);
+      const newData = this.getStoredData().filter((data) => !data.completed);
 
-      newdata.forEach((item, index) => {
+      newData.forEach((item, index) => {
         item.index = index;
       });
 
-      localStorage.setItem('data', JSON.stringify(newdata));
-      // window.location.reload();
+      localStorage.setItem('data', JSON.stringify(newData));
       this.read();
     });
   }
 
   update() {
-    const btnitems = document.querySelectorAll('#dot');
+    const btnItems = document.querySelectorAll('#dot');
     const Input = document.createElement('input');
-    const checkboxes = document.querySelectorAll('#checkbox');
-    Input.className = 'InputUpdate';
-    const newdata = this.getStoredData();
+    const checkBoxes = document.querySelectorAll('#checkBox');
+    Input.className = 'inputUpdate';
+    const newData = this.getStoredData();
 
-    checkboxes.forEach((checkboxe) => {
-      checkboxe.addEventListener('change', (e) => {
+    checkBoxes.forEach((checkBoxe) => {
+      checkBoxe.addEventListener('change', (e) => {
         this.getStoredData().forEach((item) => {
           if (item.index === +e.target.dataset.id) {
             item.completed = true;
-            const index = newdata.findIndex((item) => item.index === +e.target.dataset.id);
-            newdata[index].completed = true;
+            const index = newData.findIndex((item) => item.index === +e.target.dataset.id);
+            newData[index].completed = true;
 
-            localStorage.setItem('data', JSON.stringify(newdata));
+            localStorage.setItem('data', JSON.stringify(newData));
           }
         });
         e.target.nextElementSibling.style.textDecoration = '2px black line-through';
       });
     });
 
-    btnitems.forEach((btn) => {
+    btnItems.forEach((btn) => {
       btn.addEventListener('click', (e) => {
-        const btntdot = e.target.parentElement;
-        const deletebtn = btntdot.nextElementSibling;
-        const formTarget = btntdot.previousElementSibling.children[2];
+        const btnDot = e.target.parentElement;
+        const deleteBtn = btnDot.nextElementSibling;
+        const formTarget = btnDot.previousElementSibling.children[2];
         const h2 = formTarget.previousElementSibling;
 
-        btntdot.classList.add('hidden');
-        deletebtn.classList.remove('hidden');
-        deletebtn.style.color = 'red';
+        btnDot.classList.add('hidden');
+        deleteBtn.classList.remove('hidden');
+        deleteBtn.style.color = 'red';
         formTarget.style.display = 'flex';
         h2.classList.add('hidden');
 
@@ -95,20 +94,20 @@ class Task {
           const { value } = input;
           const itemIndex = input.dataset.parentindex;
 
-          const newget = [...this.getStoredData()];
+          const newGet = [...this.getStoredData()];
           formTarget.style.display = 'none';
-          btntdot.classList.remove('hidden');
-          deletebtn.classList.add('hidden');
+          btnDot.classList.remove('hidden');
+          deleteBtn.classList.add('hidden');
           h2.classList.remove('hidden');
 
-          newget.filter((data) => {
+          newGet.filter((data) => {
             if (data.index === +itemIndex) {
-              const item = newget[itemIndex];
+              const item = newGet[itemIndex];
               item.description = value;
-              localStorage.setItem('data', JSON.stringify(newget));
+              localStorage.setItem('data', JSON.stringify(newGet));
               this.read();
             }
-            return newget;
+            return newGet;
           });
         });
       });
@@ -121,14 +120,14 @@ class Task {
     listItems.innerHTML = '';
     newData.forEach((item) => {
       const li = document.createElement('li');
-      li.className = 'Item';
+      li.className = 'task';
 
       const listItem = `
     <div class="description">
-    <input type="checkbox" name="checkbox" id="checkbox" data-id=${item.index}>
+    <input type="checkbox" name="checkbox" id="checkBox" data-id=${item.index}>
     <h2 id='underlined'>${item.description}</h2>
     <form class="newForm">
-    <input class='InputUpdate' type="input" name="description" data-parentIndex="${item.index}" value="${item.description}"/>
+    <input class='inputUpdate' type="input" name="description" data-parentIndex="${item.index}" value="${item.description}"/>
     </form>
     </div>
     <button class="btn-dot" id="dot" data-id=${item.index}><span class="material-symbols-outlined">more_vert</span></button>
@@ -159,10 +158,10 @@ const renderDomContentDb = () => {
   task.read();
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const InputValue = document.querySelector('#input-list').value;
+    const inputValue = document.querySelector('#input-list').value;
 
     const dataObj = {
-      description: InputValue,
+      description: inputValue,
       completed: false,
       index: newData.length,
     };

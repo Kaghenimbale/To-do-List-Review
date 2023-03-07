@@ -108,7 +108,7 @@ span {
   justify-content: space-between;
 }
 
-.Item {
+.task {
   width: 100%;
   display: flex;
   align-items: center;
@@ -133,7 +133,7 @@ span {
   display: flex;
 }
 
-.InputUpdate {
+.inputUpdate {
   font-size: 1.2rem;
   border: 0.2px solid black;
   background: transparent;
@@ -159,7 +159,7 @@ span {
   animation-duration: 0.5s;
 }
 
-#checkbox {
+#checkBox {
   height: 1.2rem;
   width: 1.2rem;
   margin: auto 1.5rem;
