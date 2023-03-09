@@ -34,7 +34,11 @@ const deleteItem = (id) => {
   localStorage.setItem('data', JSON.stringify(todoArr));
 };
 
-const arr = [...todoArr];
+const arr = [
+  { description: 'one', completed: false, index: 0 },
+  { description: 'two', completed: false, index: 1 },
+  { description: 'three', completed: false, index: 2 },
+];
 
 const editTodo = (id, newTask) => {
   const newItem = arr.find((item) => item.index === id);
