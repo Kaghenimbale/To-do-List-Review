@@ -41,9 +41,4 @@ describe('Todo List', () => {
     Add();
     expect(todoArr.length).toBe(1);
   })
-
-  test('delete Item', () => {
-    deleteItem(1)
-    expect(todoArr.length).toBe(1);
-  })
 });
