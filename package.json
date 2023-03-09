@@ -4,7 +4,7 @@
   "description": "- [📖 About the Project](#about-project)   - [🛠 Built With](#built-with)     - [Tech Stack](#tech-stack)     - [Key Features](#key-features)   - [🚀 Live Demo](#live-demo) - [💻 Getting Started](#getting-started)   - [Setup](#setup)   - [Prerequisites](#prerequisites)   - [Install](#install)   - [Usage](#usage)   - [Run tests](#run-tests)   - [Deployment](#triangular_flag_on_post-deployment) - [👥 Authors](#authors) - [🔭 Future Features](#future-features) - [🤝 Contributing](#contributing) - [⭐️ Show your support](#support) - [🙏 Acknowledgements](#acknowledgements) - [❓ FAQ (OPTIONAL)](#faq) - [📝 License](#license)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack --mode development"
@@ -21,9 +21,19 @@
   },
   "homepage": "https://github.com/Kaghenimbale/To-do-List-Review#readme",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.27.5",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
