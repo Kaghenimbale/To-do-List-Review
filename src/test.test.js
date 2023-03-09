@@ -36,3 +36,9 @@ const deleteItem = (id) => {
   localStorage.setItem('data', JSON.stringify(todoArr));
 }
 
+describe('Todo List', () => {
+  test('Add  todo', () => {
+    Add();
+    expect(todoArr.length).toBe(1);
+  })
+});
