@@ -74,17 +74,16 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-  - cd my-folder
-  - git clone [here](https://github.com/Kaghenimbale/To-Do-List-app.git)
+- cd my-folder
+- git clone [here](https://github.com/Kaghenimbale/To-Do-List-app.git)
 
 ### Install
 
 Install this project with:
 
 Install Node Modules
-  
-  - npm install
 
+- npm install
 
 ### Usage
 
@@ -92,24 +91,23 @@ To run the project, execute the following command:
 
 Start the development server
 
-  - npm start
+- npm start
 
 ### Run tests
 
 To run the project, execute the following command:
 
-  - npm run build
-  - to build this project from the source folder using webpack
+- npm run build
+- to build this project from the source folder using webpack
 
-  - npm run start
-  - in order to start a server and deploy the project localy
-  
+- npm run start
+- in order to start a server and deploy the project localy
+
 To run tests, run the following command:
 
-  - cd my-project
-  - npx hint .
-  - npx stylelint "**/*.{css,scss}"
-
+- cd my-project
+- npx hint .
+- npx stylelint "\*_/_.{css,scss}"
 
 ### Deployment
 
@@ -127,6 +125,11 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/MbaleKagheni)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kagheni-mbale-401b90240/)
 
+👤 **Dieum Akonkwa**
+
+- GitHub: [@dieum512](https://github.com/dieum512/)
+- Twitter: [@dieumakonkw](https://twitter.com/dieumakonkw)
+- LinkedIn: [Dieum Akonkwa](https://www.linkedin.com/in/dieum-akonkwa-7981b924b/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,4 +175,3 @@ Thank you Microverse and my friend who always explain me for preparing this proj
 This project is [MIT](https://github.com/Kaghenimbale/To-Do-List-app/blob/add-license-1/Licence)) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
