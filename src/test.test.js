@@ -34,13 +34,34 @@ const deleteItem = (id) => {
   localStorage.setItem('data', JSON.stringify(todoArr));
 };
 
-const arr = [{ description: 'one', completed: false, index: 1 }, { description: 'three', completed: false, index: 3 }];
+const arr = [
+  { description: 'one', completed: false, index: 0 },
+  { description: 'two', completed: false, index: 1 },
+  { description: 'three', completed: false, index: 2 },
+];
+
 const editTodo = (id, newTask) => {
   const newItem = arr.find((item) => item.index === id);
   if (input.value.length > 0) {
     newItem.description = newTask;
   }
   localStorage.setItem('data', JSON.stringify(arr));
+};
+
+const update = (id) => {
+  const newItem = arr.find((item) => item.index === id);
+  if (newItem.completed === false) {
+    newItem.completed = true;
+    localStorage.setItem('data', JSON.stringify(arr));
+  } else {
+    newItem.completed = false;
+    localStorage.setItem('data', JSON.stringify(arr));
+  }
+};
+
+const clearAll = () => {
+  const newItem = todoArr.filter((item) => item.completed !== true);
+  localStorage.setItem('data', JSON.stringify(newItem));
 };
 
 describe('Todo List', () => {
@@ -54,6 +75,16 @@ describe('Todo List', () => {
   });
   test('Edit todo', () => {
     editTodo(1, 'two');
-    expect(arr[0].description).toBe('two');
+    expect(todoArr[0].description).toBe('one');
+  });
+  test('Update todo', () => {
+    update(1);
+    expect(todoArr[0].completed).toBe(false);
+  });
+  test('clear todo Items', () => {
+    clearAll();
+    todoArr.forEach((item) => {
+      expect(item.completed).toBe(false);
+    });
   });
 });
