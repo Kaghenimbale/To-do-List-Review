@@ -24,3 +24,15 @@ const Add = () => {
   }
 }
 
+const deleteItem = (id) => {
+  const indexItem = todoArr.findIndex((item) => item.index === id);
+  if (indexItem > -1) {
+  todoArr.splice(indexItem, 1);
+
+  todoArr.forEach((item, indexItem) => {
+      item.index = indexItem;
+  });
+  }
+  localStorage.setItem('data', JSON.stringify(todoArr));
+}
+
